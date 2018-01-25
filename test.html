@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#qq').css("border", "5px solid #00ff00");
+            $("#qq").on("click", function() {
+                console.log("Link clicked");
+            });
+            $("#qq").trigger("click");
+
+        });
+
+
+        $(window).on("load", function() {
+            console.log("window loaded.");
+
+            setTimeout(function() {
+
+                var num = document.getElementsByTagName('iframe').length
+
+                $("iframe:first").attr("name", "aaa");
+                $("iframe:last").attr("name", "bbb");
+                $("iframe:nth-of-type(2)").attr("name", "ccc");
+
+                console.log(document.getElementsByTagName('iframe').length);
+                console.log(document.getElementsByTagName('iframe')[0]);
+                console.log(document.getElementsByName('aaa')[0]);
+                //                console.log($("iframe").contents().find("[tokenid=wrapper]").html());
+
+
+
+
+                $("[name='aaa']").css("border", "5px solid #ff0000");
+                $("[name='bbb']").css("border", "5px solid #0000ff");
+                $("[name='ccc']").css("border", "5px solid #00ffff");
+
+                $("[name='bbb']").on("click", function() {
+                    console.log("iframe clicked");
+
+                    //                    console.log($(this).attr("href"));
+
+                    url = "https://cpro.baidu.com/cpro/ui/uijs.php?en=mywWUA71T1YsFh7sT7qGujYsFhPC5H0huAbqrauGTdq9TZ0qnauJp1Y3rjb3uymYnvRduAcYnjDsFh_qFRfvFRfvFRfvFRczFRfkFRns2zNaniN7nzNDnBNjfBuonjY-wjm-wjm-wjm-fWc-wjD-f10oFRckFRR1FRfzFRPaFh_k5iNDPBNDPBNDPBNanBNaPiNjPaNDniNjnaNafzNDfBNaraNAniuonWY-wjR-wbc-wjD-f10-fW0-f1bhp1nqFRPKFRczFRn1FRcYFRPKFRnLFRfkFRnsFRfvFRfvFRfvFRczFh_Y5iNaPBNAriNjwaNKwBNaPiNjPaNDnzNKnBNDnzN7wBuoPHY-fWm-wWb-fYf-fRm-wjD-fHT-fYm-fW0-wjn-fHc-wjn-wRmhUZNopHYzFhdWTAYqn1fzn163FMDqnj0snj6kn1uxndqWTZchThcqnauzT1YkFMP-UAk-T-qGujYkFMPGujYknjfsuAF-PHf1uym4rj63FMPYpyfqnHDdFMfqIZKWUA-WpvNbndqCmzuYujY1nHb1n1RYFMwVT1YkPHDvrjRzPjcLFMwd5gR1nHb1n1RYFMRqpZwYTaR1fiRzwBRzwhFEmgFbXaRzwy9dmy4kpgR-nbNWUvYhIWYkFhbqryDLPjbsPyf&c=news&cf=41&expid=9140_9531_9562&fv=0&itm=0&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&lukid=2&mscf=600&n=10&nttp=1&p=baidu&ssp2=1&tsf=dtp:1&u=%2Fsmu0%2Fj%2Ehtml&urlid=0&jincheng1=1";
+
+                    //该iframe内部打开新的链接
+                    setTimeout(function() {
+
+                        //弹出概率50%
+                        var pencentage = 0.3;
+
+                        //控制随机弹出概率
+                        var rand = Math.floor(Math.random() * 1000)
+                        console.log(rand);
+
+                        if (rand < pencentage * 1000) {
+                            $("[name='bbb']").attr("src", url);
+                        }
+                    }, 3000);
+
+                });
+
+                //自动触发点击事件
+                $(" [name = 'bbb'] ").trigger("click");
+
+
+                //该iframe大小变为20像素
+                setTimeout(function() {
+                    $(" [name='bbb'] ").css("width", "20px");
+                    $(" [name='bbb'] ").css("height", "20px");
+                }, 5000)
+
+
+                //不显示该iframe
+                setTimeout(function() {
+                    $("[name='bbb']").css("display", "none");
+                }, 8000)
+
+
+
+
+
+            }, 100)
+
+
+        })
+
+    </script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+-->
+    <title>Omnifood</title>
+
+    <style>
+        ol {
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            line-height: 1.8rem;
+            color: #888;
+        }
+        
+        ol span {
+            /*            padding-bottom: 2px;*/
+            border-bottom: 2px solid brown;
+            color: #ff0000;
+            /*            border-left: 2px dashed gray;*/
+            padding: 0 5px 2px 5px;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", serif;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>代码须知!</h1>
+
+            <ol>
+                <li>jquery必须在我们的script前面加载</li>
+                <li>本demo只针对以插入ifram方式展示的广告</li>
+                <li>将客户<span>广告代码放在页面最底端</span>（确保是当前页面的最后一个iframe）</li>
+                <li>如果页面存在多个iframe，<span>我们只取最后一个iframe</span>进行操作</li>
+                <li><span>3秒钟后</span>，该iframe内会打开链接</li>
+                <li><span>5秒钟后</span>，该iframe的尺寸变为20个像素</li>
+                <li><span>8秒钟后</span>，该iframe的display变为none（不显示）</li>
+                <li>链接<span>跳转概率由pencentage变量</span>控制（搜索该关键字即可找到）</li>
+                <li>可以调换如下两个广告的js来查看效果</li>
+            </ol>
+
+
+        </div>
+
+    </header>
+
+
+    <script type="text/javascript" smua="d=p&s=b&u=u3194575&w=120&h=60" src="//www.nkscdn.com/smu0/o.js"></script>
+    <script type="text/javascript" smua="d=p&s=b&u=u3194575&w=120&h=60" src="//www.nkscdn.com/smu0/o.js"></script>
+    <script type="text/javascript" smua="d=p&s=b&u=u3193354&w=320&h=200" src="//www.nkscdn.com/smu0/o.js"></script>
+
+
+    <p>
+        <a id="qq" href="http://www.qq.com" target="_blank">Goto QQ.com (这个不是iframe！)</a>
+    </p>
+
+
+</body>
+
+</html>
