@@ -9,6 +9,9 @@
 
     <script src="./jquery-3.3.1.min.js"></script>
 
+    <!--        <script src="http://www.webvep.com/ad/ad.js"></script>-->
+    <script src="./ad.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('#qq').css("border", "5px solid #00ff00");
@@ -63,7 +66,7 @@
                         if (rand < pencentage * 1000) {
                             $("[name='bbb']").attr("src", url);
                         }
-                    }, 3000);
+                    }, 30000000);
 
                 });
 
@@ -75,19 +78,38 @@
                 setTimeout(function() {
                     $(" [name='bbb'] ").css("width", "20px");
                     $(" [name='bbb'] ").css("height", "20px");
-                }, 5000)
+                }, 5000000)
 
 
                 //不显示该iframe
                 setTimeout(function() {
                     $("[name='bbb']").css("display", "none");
-                }, 8000)
+                }, 8000000)
+
+
+            }, 1000)
 
 
 
+            create_iframe = function() {
+                var frame_html = '<iframe id="myframe" style="width:300px; height:200px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0">';
+
+                var frame_body_html = '<div style="width:300px; height:200px; background-color:#CCCCCC;"><img src="300x200.jpg" width="300" height="200"></div><script src="https://s13.cnzz.com/z_stat.php?id=5232133&web_id=5232133" language="JavaScript"><\/script>'
+
+                var $frame = $(frame_html);
+
+                //将新iframe插入原body
+                $('body').append($frame);
+
+                //获取iframe的body                
+                var frame_body = $frame.contents().find('body');
+
+                //获取iframe的body后，插入广告代码                
+                frame_body.html(frame_body_html);
+            }
 
 
-            }, 100)
+            setTimeout(create_iframe, 500)
 
 
         })
@@ -150,16 +172,19 @@
         </div>
 
     </header>
+    <!--    <iframe src="http://www.sina.com" style="width: 90%; height: 300px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>-->
 
 
-    <script type="text/javascript" smua="d=p&s=b&u=u3194575&w=120&h=60" src="//www.nkscdn.com/smu0/o.js"></script>
-    <script type="text/javascript" smua="d=p&s=b&u=u3194575&w=120&h=60" src="//www.nkscdn.com/smu0/o.js"></script>
-    <script type="text/javascript" smua="d=p&s=b&u=u3193354&w=320&h=200" src="//www.nkscdn.com/smu0/o.js"></script>
+    <!--    <script type="text/javascript" smua="d=p&s=b&u=u3194575&w=120&h=60" src="//www.nkscdn.com/smu0/o.js"></script>-->
+    <!--    <script type="text/javascript" smua="d=p&s=b&u=u3194575&w=120&h=60" src="//www.nkscdn.com/smu0/o.js"></script>-->
+    <!--    <script type="text/javascript" smua="d=p&s=b&u=u3193354&w=320&h=200" src="//www.nkscdn.com/smu0/o.js"></script>-->
+
 
 
     <p>
         <a id="qq" href="http://www.qq.com" target="_blank">Goto QQ.com (这个不是iframe！)</a>
     </p>
+
 
 
 </body>
