@@ -2,8 +2,11 @@ var d = document.createElement("iframe");
 
 d.frameBorder = 0;
 d.scrolling = "no";
-d.style.width = "200px";
+d.style.width = "300px";
 d.style.height = "200px";
+d.padding = 0;
+d.margin = 0;
+
 
 
 
@@ -28,15 +31,26 @@ var fbody = f.contentWindow.document.getElementsByTagName("body")[0];
 
 console.log(fbody);
 
-var newContent = document.createTextNode("Hi there and greetings!");
+//var newContent = document.createTextNode("Hi there and greetings!");
+
+
+htmlString = '<div style="width:300px; height:200px; background-color:#CCCCCC;"><img src="300x200.jpg" width="300" height="200"></div>'
+var newContent = document.createElement('div');
+newContent.innerHTML = htmlString.trim();
+
+
+function createElementFromHTML(htmlString) {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+
+    // Change this to div.childNodes to support multiple top-level nodes
+    return div.firstChild;
+}
+
+
 
 fbody.appendChild(newContent);
 
-var html = "<body><p>HEllo</p></body>";
-//document.body.appendChild(d);
-fbody.document.open();
-fbody.document.write(html);
-fbody.document.close();
 
 
 
