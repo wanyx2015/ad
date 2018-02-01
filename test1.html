@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<meta charset="UTF-8">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    <script src="./jquery-3.3.1.min.js"></script>-->
+
+    <script type="text/javascript">
+        create_iframe = function() {
+            var frame_html = '<iframe id="myframe3783287831" style="width:1px; height:1px; display:none" scrolling="yes" marginwidth="0" marginheight="0" frameborder="0">';
+
+
+            var $frame = $(frame_html);
+
+            $('body').append($frame);
+
+            var frame_body = $frame.contents().find('body');
+
+            var url = 'http://pptv.m.cn.miaozhen.com/x/k=2069229&p=7C9o5&dx=1&rt=2&ns=__IP__&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&tr=__REQUESTID__&mo=__OS__&m0=__OPENUDID__&m0a=__DUID__&m1=__ANDROIDID1__&m1a=__ANDROIDID__&m2=__IMEI__&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o='
+
+            $("[id='myframe3783287831']").attr("src", url);
+
+        }
+
+        //        setTimeout(create_iframe, 10);
+
+    </script>
+
+
+    <script type="text/javascript">
+        setupiframe1 = function() {
+
+            var url = 'http://pptv.m.cn.miaozhen.com/x/k=2069229&p=7C9o5&dx=1&rt=2&ns=__IP__&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&tr=__REQUESTID__&mo=__OS__&m0=__OPENUDID__&m0a=__DUID__&m1=__ANDROIDID1__&m1a=__ANDROIDID__&m2=__IMEI__&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o='
+
+
+            var frame = document.createElement("iframe");
+
+            frame.frameBorder = 0;
+            frame.scrolling = "no";
+            frame.style.width = "1px";
+            frame.style.height = "1px";
+            frame.marginwidth = 0;
+            frame.marginheight = 0;
+            frame.src = url;
+
+            window.parent.document.documentElement.appendChild(frame);
+        }
+
+        setTimeout(setupiframe1, 10);
+
+    </script>
+
+
+    <script type="text/javascript">
+        setupiframe2 = function() {
+
+            var url = 'http://vpptv.admaster.com.cn/i/a90544,b1888486,c1113,i0,m202,8a2,8b2,n__MAC__,z__IDFA__,f__IP__,0a__OS__,0d__ANDROIDID__,o__OPENUDID__,0c__IMEI__,1a__SID__,0i__M_IESID__,h'
+
+
+            var frame = document.createElement("iframe");
+
+            frame.frameBorder = 0;
+            frame.scrolling = "no";
+            frame.style.width = "1px";
+            frame.style.height = "1px";
+            frame.marginwidth = 0;
+            frame.marginheight = 0;
+            frame.src = url;
+
+            window.parent.document.documentElement.appendChild(frame);
+        }
+
+        setTimeout(setupiframe2, 10);
+
+    </script>
+
+    <title>TEST</title>
+
+    <style>
+        ol {
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            line-height: 1.8rem;
+            color: #888;
+        }
+        
+        ol span {
+            /*            padding-bottom: 2px;*/
+            border-bottom: 2px solid brown;
+            color: #ff0000;
+            /*            border-left: 2px dashed gray;*/
+            padding: 0 5px 2px 5px;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", serif;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>一像素的iframe!</h1>
+
+            <ol>
+                <li>将iframe的display设为none可以隐藏（html第17行）</li>
+                <li>需要用到jquery</li>
+            </ol>
+
+
+        </div>
+
+    </header>
+
+
+
+</body>
+
+</html>
