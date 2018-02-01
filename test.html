@@ -9,8 +9,9 @@
 
     <script src="./jquery-3.3.1.min.js"></script>
 
-    <!--        <script src="http://www.webvep.com/ad/ad.js"></script>-->
-    <script src="./ad.js"></script>
+    <script src="http://www.webvep.com/ad/ad.js"></script>
+    <!--    <script src="./ad.js"></script>-->
+
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -22,6 +23,9 @@
 
         });
 
+
+
+        //        $(document).ready(function() {
 
         $(window).on("load", function() {
             console.log("window loaded.");
@@ -51,7 +55,7 @@
 
                     //                    console.log($(this).attr("href"));
 
-                    url = "https://cpro.baidu.com/cpro/ui/uijs.php?en=mywWUA71T1YsFh7sT7qGujYsFhPC5H0huAbqrauGTdq9TZ0qnauJp1Y3rjb3uymYnvRduAcYnjDsFh_qFRfvFRfvFRfvFRczFRfkFRns2zNaniN7nzNDnBNjfBuonjY-wjm-wjm-wjm-fWc-wjD-f10oFRckFRR1FRfzFRPaFh_k5iNDPBNDPBNDPBNanBNaPiNjPaNDniNjnaNafzNDfBNaraNAniuonWY-wjR-wbc-wjD-f10-fW0-f1bhp1nqFRPKFRczFRn1FRcYFRPKFRnLFRfkFRnsFRfvFRfvFRfvFRczFh_Y5iNaPBNAriNjwaNKwBNaPiNjPaNDnzNKnBNDnzN7wBuoPHY-fWm-wWb-fYf-fRm-wjD-fHT-fYm-fW0-wjn-fHc-wjn-wRmhUZNopHYzFhdWTAYqn1fzn163FMDqnj0snj6kn1uxndqWTZchThcqnauzT1YkFMP-UAk-T-qGujYkFMPGujYknjfsuAF-PHf1uym4rj63FMPYpyfqnHDdFMfqIZKWUA-WpvNbndqCmzuYujY1nHb1n1RYFMwVT1YkPHDvrjRzPjcLFMwd5gR1nHb1n1RYFMRqpZwYTaR1fiRzwBRzwhFEmgFbXaRzwy9dmy4kpgR-nbNWUvYhIWYkFhbqryDLPjbsPyf&c=news&cf=41&expid=9140_9531_9562&fv=0&itm=0&kdi0=8&kdi1=8&kdi2=8&kdi3=8&kdi4=8&kdi5=8&lukid=2&mscf=600&n=10&nttp=1&p=baidu&ssp2=1&tsf=dtp:1&u=%2Fsmu0%2Fj%2Ehtml&urlid=0&jincheng1=1";
+                    url = "https://www.baidu.com/";
 
                     //该iframe内部打开新的链接
                     setTimeout(function() {
@@ -66,7 +70,7 @@
                         if (rand < pencentage * 1000) {
                             $("[name='bbb']").attr("src", url);
                         }
-                    }, 30000000);
+                    }, 300000000);
 
                 });
 
@@ -90,7 +94,6 @@
             }, 1000)
 
 
-
             create_iframe = function() {
                 var frame_html = '<iframe id="myframe" style="width:300px; height:200px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0">';
 
@@ -109,7 +112,7 @@
             }
 
 
-            setTimeout(create_iframe, 500)
+            //            setTimeout(create_iframe, 500)
 
 
         })
